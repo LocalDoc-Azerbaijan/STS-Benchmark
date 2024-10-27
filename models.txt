@@ -1,0 +1,7 @@
+sentence-transformers/LaBSE
+antoinelouis/colbert-xm
+intfloat/multilingual-e5-large-instruct
+intfloat/multilingual-e5-large
+intfloat/multilingual-e5-base
+intfloat/multilingual-e5-small
+BAAI/bge-m3
