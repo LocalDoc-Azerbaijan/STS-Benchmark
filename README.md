@@ -11,7 +11,7 @@ Benchmark testing embedding models in Azerbaijani for sentence similarity tasks.
 - [Parameters](#parameters)
 - [Installation](#installation)
 - [Usage](#usage)
-
+- [View the Results](#usage)
 
 ## Overview
 
@@ -100,6 +100,7 @@ The benchmarking script accepts several parameters to customize the evaluation p
 4. **Install Dependencies**
 
 
+
 ## Usage
 
 To evaluate models on Azerbaijani sentence similarity datasets, follow these steps:
@@ -138,6 +139,8 @@ To run the benchmark on GPU with a batch size of 64 and save results to `custom_
 ```bash
 python benchmark.py --models_file models.txt --output custom_results.csv --batch_size 64 --device cuda
 ```
+
+
 
 ## View the Results
 
