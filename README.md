@@ -11,7 +11,7 @@ Benchmark testing embedding models in Azerbaijani for sentence similarity tasks.
 - [Parameters](#parameters)
 - [Installation](#installation)
 - [Usage](#usage)
-- [View the Results](#usage)
+- [View the Results](#view)
 
 ## Overview
 
@@ -142,7 +142,7 @@ python benchmark.py --models_file models.txt --output custom_results.csv --batch
 
 
 
-## View the Results
+## View
 
 Once the benchmarking completes, the results are saved in the specified output file (default is `results.csv`). This file contains the Pearson correlation scores for each model-dataset pair along with an average score for each model.
 
