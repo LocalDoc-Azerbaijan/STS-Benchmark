@@ -11,9 +11,7 @@ Benchmark testing embedding models in Azerbaijani for sentence similarity tasks.
 - [Parameters](#parameters)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Results](#results)
-- [Contributing](#contributing)
-- [License](#license)
+
 
 ## Overview
 
@@ -100,7 +98,60 @@ The benchmarking script accepts several parameters to customize the evaluation p
    ```
 
 4. **Install Dependencies**
-   
+
+
+## Usage
+
+To evaluate models on Azerbaijani sentence similarity datasets, follow these steps:
+
+### 1. Prepare the Models List
+
+Create a `models.txt` file where each line contains the Hugging Face model name you want to evaluate. Example:
+
+```plaintext
+sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+sentence-transformers/distiluse-base-multilingual-cased-v1
+bert-base-multilingual-cased
+xlm-roberta-base
+```
+
+
+### 2. Run the Benchmark Script
+
    ```bash
-   pip install -r requirements.txt
+   python benchmark.py --models_file models.txt --output results.csv --batch_size 32 --device cuda
    ```
+
+
+### Command Line Parameters:
+
+- `--models_file`: **(Required)** Path to the `models.txt` file containing a list of model names to evaluate.
+- `--output`: **(Optional)** Name of the output CSV file to save results. Defaults to `benchmark_results.csv`.
+- `--batch_size`: **(Optional)** Batch size for processing sentences. Larger sizes may improve processing speed but require more memory. Defaults to `32`.
+- `--device`: **(Optional)** Device to run the model on (`cpu` or `cuda`). Use `cuda` to enable GPU acceleration if available.
+
+
+### Example Command
+
+To run the benchmark on GPU with a batch size of 64 and save results to `custom_results.csv`, use the following command:
+
+```bash
+python benchmark.py --models_file models.txt --output custom_results.csv --batch_size 64 --device cuda
+```
+
+## View the Results
+
+Once the benchmarking completes, the results are saved in the specified output file (default is `results.csv`). This file contains the Pearson correlation scores for each model-dataset pair along with an average score for each model.
+
+#### Example Output Format
+
+| Model                                     | Azerbaijani-STSBenchmark | Azerbaijani-biosses-sts | Azerbaijani-sickr-sts | Average Pearson |
+|-------------------------------------------|--------------------------|-------------------------|-----------------------|------------------|
+| sentence-transformers/paraphrase-MiniLM   | 0.85                     | 0.80                    | 0.78                  | 0.81             |
+| bert-base-multilingual-cased              | 0.78                     | 0.75                    | 0.73                  | 0.75             |
+| xlm-roberta-base                          | 0.79                     | 0.77                    | 0.76                  | 0.77             |
+
+- **Individual Scores:** Each dataset column represents the Pearson correlation score between predicted and true similarity scores for the given model.
+- **Average Pearson:** This column shows the average Pearson correlation score across all datasets for each model, providing an overall measure of performance.
+
+Use these scores to compare the effectiveness of different models in capturing sentence similarity for Azerbaijani text.
