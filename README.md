@@ -147,12 +147,16 @@ python benchmark.py --models_file models.txt --output custom_results.csv --batch
 Once the benchmarking completes, the results are saved in the specified output file (default is `results.csv`). This file contains the Pearson correlation scores for each model-dataset pair along with an average score for each model.
 
 #### Example Output Format
+| STSBenchmark | biosses-sts | sickr-sts | sts12-sts | sts13-sts | sts15-sts | sts16-sts | Average Pearson | Model                                |
+|--------------|-------------|-----------|-----------|-----------|-----------|-----------|-----------------|--------------------------------------|
+| 0.7363       | 0.8148      | 0.7067    | 0.7050    | 0.6535    | 0.7514    | 0.7070    | 0.7250          | sentence-transformers/LaBSE           |
+| 0.5830       | 0.2486      | 0.5921    | 0.5593    | 0.5559    | 0.5404    | 0.5289    | 0.5155          | antoinelouis/colbert-xm               |
+| 0.7572       | 0.8139      | 0.7328    | 0.7646    | 0.6318    | 0.7542    | 0.7092    | 0.7377          | intfloat/multilingual-e5-large-instruct |
+| 0.7485       | 0.7714      | 0.7271    | 0.7170    | 0.6496    | 0.7570    | 0.7255    | 0.7280          | intfloat/multilingual-e5-large        |
+| 0.6960       | 0.8185      | 0.6950    | 0.6752    | 0.5899    | 0.7186    | 0.6790    | 0.6960          | intfloat/multilingual-e5-base         |
+| 0.7376       | 0.7917      | 0.7190    | 0.7441    | 0.6286    | 0.7461    | 0.7026    | 0.7242          | intfloat/multilingual-e5-small        |
+| 0.7927       | 0.6672      | 0.7758    | 0.8122    | 0.7312    | 0.7831    | 0.7416    | 0.7577          | BAAI/bge-m3                           |
 
-| Model                                     | Azerbaijani-STSBenchmark | Azerbaijani-biosses-sts | Azerbaijani-sickr-sts | Average Pearson |
-|-------------------------------------------|--------------------------|-------------------------|-----------------------|------------------|
-| sentence-transformers/paraphrase-MiniLM   | 0.85                     | 0.80                    | 0.78                  | 0.81             |
-| bert-base-multilingual-cased              | 0.78                     | 0.75                    | 0.73                  | 0.75             |
-| xlm-roberta-base                          | 0.79                     | 0.77                    | 0.76                  | 0.77             |
 
 - **Individual Scores:** Each dataset column represents the Pearson correlation score between predicted and true similarity scores for the given model.
 - **Average Pearson:** This column shows the average Pearson correlation score across all datasets for each model, providing an overall measure of performance.
