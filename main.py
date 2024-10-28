@@ -26,12 +26,12 @@ def evaluate_model_on_dataset(model_name, dataset_name, batch_size=32, device='c
     model.eval()  # Set model to evaluation mode
 
     # Load the dataset
-    dataset = load_dataset(dataset_name, split='train')  # Assuming 'test' split; adjust if necessary
+    dataset = load_dataset(dataset_name, split='train')
 
     # Extract sentences and true scores
     sentences1 = [item['sentence1'] for item in dataset]
     sentences2 = [item['sentence2'] for item in dataset]
-    true_scores = [item['score'] for item in dataset]  # Use 'scaled_score' if needed
+    true_scores = [item['score'] for item in dataset]
 
     # Compute embeddings for all sentences in batches
     print(f"Computing embeddings for model '{model_name}' on dataset '{dataset_name}'...")
