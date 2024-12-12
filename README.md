@@ -120,7 +120,7 @@ xlm-roberta-base
 ### 2. Run the Benchmark Script
 
    ```bash
-   python benchmark.py --models_file models.txt --output results.csv --batch_size 32 --device cuda
+   python main.py --models_file models.txt --output results.csv --batch_size 32 --device cuda
    ```
 
 
@@ -137,7 +137,7 @@ xlm-roberta-base
 To run the benchmark on GPU with a batch size of 64 and save results to `custom_results.csv`, use the following command:
 
 ```bash
-python benchmark.py --models_file models.txt --output custom_results.csv --batch_size 64 --device cuda
+python main.py --models_file models.txt --output custom_results.csv --batch_size 64 --device cuda
 ```
 
 
