@@ -86,8 +86,8 @@ The benchmarking script accepts several parameters to customize the evaluation p
 1. **Clone the Repository**
 
    ```bash
-   git clone https://github.com/localdoc-azerbaijan/azerbaijani-sentence-similarity-benchmark.git
-   cd azerbaijani-sentence-similarity-benchmark
+   git clone https://github.com/LocalDoc-Azerbaijan/STS-Benchmark.git
+   cd STS-Benchmark
    ```
 
 2. **Create a Virtual Environment**
